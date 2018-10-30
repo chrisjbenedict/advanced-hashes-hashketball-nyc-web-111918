@@ -146,5 +146,5 @@ end
 def player_numbers(team_name)
   game_hash.values.collect do |players|
     player.fetch(:number)
+  end
 end
-
