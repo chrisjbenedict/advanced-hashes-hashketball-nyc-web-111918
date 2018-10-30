@@ -120,10 +120,7 @@ end
 
 
 def num_points_scored(name)
-  player = get_player(name)
+  players = game_hash[:home][:players].merge(game_hash[:away][:players])
+  player = players.fetch(name)
   player.fetch(:points)
-end
-
-def get_player(name)
-  players.fetch(name)
 end
