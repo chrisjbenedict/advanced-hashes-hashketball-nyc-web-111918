@@ -165,6 +165,6 @@ end
 def biggest_shoe
   players = game_hash[:home][:players].merge(game_hash[:away][:players])
   players.max_by do |name, shoe_size|
-    shoe_size.fetch(:shoe)
+    shoe_size.fetch(:shoe)[1]
   end
 end
