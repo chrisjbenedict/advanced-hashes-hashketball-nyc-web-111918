@@ -130,4 +130,3 @@ def shoe_size(name)
   player = players.fetch(name)
   player.fetch(:shoe)
 end
-
