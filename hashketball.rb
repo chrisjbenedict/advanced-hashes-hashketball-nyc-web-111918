@@ -120,8 +120,8 @@ end
 
 
 def num_points_scored(name)
-  players = game_hash[:home][:players].merge(game_hash[:away][:players])
-  player = players.fetch(name)
+  players = game_hash[:home][:players].merge(game_hash[:away][:players]) #Could make this its own method for re-use
+  player = players.fetch(name) #Could make this its own method for re-use
   player.fetch(:points)
 end
 
@@ -129,4 +129,9 @@ def shoe_size(name)
   players = game_hash[:home][:players].merge(game_hash[:away][:players])
   player = players.fetch(name)
   player.fetch(:shoe)
+end
+
+def team_colors(team_name)
+  teams = game_hash[:home][:team_name].merge(game_hash[:away][:team_name])
+  teams.fetch(:colors)
 end
