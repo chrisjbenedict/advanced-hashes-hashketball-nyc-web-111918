@@ -132,6 +132,9 @@ def shoe_size(name)
 end
 
 def team_colors(team_name)
-  teams = game_hash[:home][:team_name].merge(game_hash[:away][:team_name])
-  teams.fetch(:colors)
+  
+end
+
+def team_names(game_hash)
+  game_hash[:home][:team_name].merge(game_hash[:away][:team_name])
 end
