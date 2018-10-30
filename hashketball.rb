@@ -132,9 +132,9 @@ def shoe_size(name)
 end
 
 def team_colors(team_name)
-  game_hash.values.collect do |team|
-    team.fetch(:colors)
-  end
+  #game_hash.values.collect do |team|
+  #  team.fetch(:colors)
+  #end
 end
 
 def team_names
@@ -144,7 +144,13 @@ def team_names
 end
 
 def player_numbers(team_name)
-  game_hash.values.collect do |players|
-    player.fetch(:number)
+  get_team(team_name)[:players].collect do |player, number|
+    number[:number]
+  end
+end
+
+def get_team(team_name)
+  game_hash.values.find do |team|
+    team.fetch(:team_name) == team_name
   end
 end
