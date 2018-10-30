@@ -131,6 +131,12 @@ def shoe_size(name)
   player.fetch(:shoe)
 end
 
+def get_team(team_name)
+  game_hash.values.find do |team|
+    team.fetch(:team_name) == team_name
+  end
+end
+
 def team_colors(team_name)
   get_team(team_name).fetch(:colors)
 end
@@ -147,8 +153,7 @@ def player_numbers(team_name)
   end
 end
 
-def get_team(team_name)
-  game_hash.values.find do |team|
-    team.fetch(:team_name) == team_name
-  end
+def player_stats(name)
+  players = game_hash[:home][:players].merge(game_hash[:away][:players])
+  players(name)
 end
