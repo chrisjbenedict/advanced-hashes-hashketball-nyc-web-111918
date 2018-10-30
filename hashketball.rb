@@ -118,6 +118,13 @@ def game_hash
   }
 end
 
+def all_players
+  players = game_hash[:home][:players].merge(game_hash[:away][:players])
+end
+
+def get_player
+  player = players.fetch(name)
+end
 
 def num_points_scored(name)
   players = game_hash[:home][:players].merge(game_hash[:away][:players]) #Could make this its own method for re-use
