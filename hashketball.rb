@@ -154,6 +154,5 @@ def player_numbers(team_name)
 end
 
 def player_stats(name)
-  players = game_hash[:home][:players].merge(game_hash[:away][:players])
-  players(name)
+  players.fetch(name)
 end
