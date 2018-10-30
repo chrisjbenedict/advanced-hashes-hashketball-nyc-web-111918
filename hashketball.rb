@@ -118,6 +118,11 @@ def game_hash
   }
 end
 
+def get_player(name)
+  players.fetch(name)
+end
+
 def num_points_scored(player)
-  players.fetch(name).fetch(points)
+  player = get_player(name)
+  player.fetch(points)
 end
