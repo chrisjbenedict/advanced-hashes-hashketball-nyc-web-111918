@@ -159,9 +159,12 @@ def player_stats(name)
 end
 
 def big_shoe_rebounds
-  players = game_hash[:home][:players].merge(game_hash[:away][:players])
-  biggest_shoe = players.max_by do |name, shoe_size|
-    shoe_size.fetch(:shoe)
-  end.
   biggest_shoe.fetch(:rebounds)
+end
+
+def biggest_shoe
+  players = game_hash[:home][:players].merge(game_hash[:away][:players])
+  players.max_by do |name, shoe_size|
+    shoe_size.fetch(:shoe)
+  end
 end
