@@ -132,7 +132,7 @@ def shoe_size(name)
 end
 
 def team_colors(team_name)
-  get_team(team_name).fetch(:color)
+  get_team(team_name).fetch(:colors)
 end
 
 def team_names
