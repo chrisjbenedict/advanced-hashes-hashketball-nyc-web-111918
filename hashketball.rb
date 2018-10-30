@@ -122,7 +122,7 @@ def get_player(name)
   players.fetch(name)
 end
 
-def num_points_scored(player)
+def num_points_scored(name)
   player = get_player(name)
   player.fetch(points)
 end
